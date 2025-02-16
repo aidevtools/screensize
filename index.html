@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Resolution Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <h1 class="text-2xl font-bold mb-4 text-gray-700">Your Screen Resolution</h1>
+            <div id="resolutionDisplay" class="text-4xl font-bold text-blue-600">
+                Loading...
+            </div>
+            <p class="mt-4 text-gray-500 text-sm">
+                Resize your window to see updates
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function updateResolution() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const resolutionDisplay = document.getElementById('resolutionDisplay');
+            resolutionDisplay.innerHTML = `${width} × ${height}`;
+        }
+
+        // Initial update
+        updateResolution();
+
+        // Update on window resize
+        window.addEventListener('resize', updateResolution);
+    </script>
+</body>
+</html>
