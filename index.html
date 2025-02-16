@@ -3,34 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screen Resolution Detector</title>
+    <meta name="description" content="Detect your current screen resolution in real-time. Instant display of your device's width and height dimensions with automatic updates on window resize.">
+    <meta name="keywords" content="screen resolution detector, display dimensions, pixel size checker, window size monitor, real-time resolution tool">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Screen Resolution Detector Tool">
+    <meta property="og:description" content="Instant real-time display of your current screen resolution dimensions">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Ads Compliance -->
+    <meta name="robots" content="index, follow">
+<!--     <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX"> -->
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Screen Resolution Detector",
+        "description": "Real-time display of current screen resolution dimensions",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All",
+        "screenshot": "screenshot.jpg",
+        "url": "https://github.com/aidevtools/screensize",
+        "author": {
+            "@type": "Person",
+            "name": "DevTool AI"
+        }
+    }
+    </script>
+
+    <title>Screen Resolution Detector Tool - Real-Time Dimension Display</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100">
-    <div class="min-h-screen flex flex-col justify-center items-center">
-        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-            <h1 class="text-2xl font-bold mb-4 text-gray-700">Your Screen Resolution</h1>
-            <div id="resolutionDisplay" class="text-4xl font-bold text-blue-600">
-                Loading...
-            </div>
-            <p class="mt-4 text-gray-500 text-sm">
-                Resize your window to see updates
-            </p>
+    <header class="container mx-auto text-center py-4">
+        <!-- Ad Unit Placement (Header) -->
+        <div class="ad-unit-header mb-4" style="height: 90px">
+            <!-- Google Ads code here -->
         </div>
-    </div>
+    </header>
+
+    <main class="min-h-screen flex flex-col justify-center items-center">
+        <article class="bg-white p-8 rounded-lg shadow-lg text-center max-w-2xl mx-4">
+            <h1 class="text-2xl font-bold mb-4 text-gray-700">Screen Resolution Detection Tool</h1>
+            <section>
+                <div id="resolutionDisplay" class="text-4xl font-bold text-blue-600" aria-live="polite">
+                    Loading...
+                </div>
+                <p class="mt-4 text-gray-500 text-sm">
+                    Real-time dimension monitoring - updates automatically on window resize
+                </p>
+            </section>
+
+            <!-- Content Section for SEO -->
+            <section class="mt-8 text-left text-gray-600">
+                <h2 class="text-xl font-semibold mb-3">Understanding Screen Resolution</h2>
+                <p class="mb-4">Your current screen resolution of <span id="dynamicResolution" class="font-medium">...</span> represents the number of pixels displayed on your screen. This tool helps you:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Detect exact display dimensions</li>
+                    <li>Monitor responsive breakpoints</li>
+                    <li>Optimize web design layouts</li>
+                    <li>Test device compatibility</li>
+                </ul>
+            </section>
+        </article>
+
+        <!-- FAQ Schema Section -->
+        <section class="mt-8 bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full mx-4">
+            <h2 class="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+            <div itemscope itemtype="https://schema.org/FAQPage">
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 itemprop="name" class="font-medium">How does the screen resolution detector work?</h3>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text" class="mt-2 text-gray-600">Our tool uses JavaScript to detect your browser's viewport dimensions and displays them in real-time, updating automatically when you resize your window.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-8 py-4">
+        <div class="container mx-auto text-center">
+            <!-- Ad Unit Placement (Footer) -->
+<!--             <div class="ad-unit-footer mt-4" style="height: 90px">
+               
+            </div> -->
+            <p class="mt-4 text-sm">© 2025 Screen Resolution Detector. All rights reserved.</p>
+            <nav class="mt-2">
+                <a href="/privacy" class="text-gray-300 hover:text-white px-2">Privacy Policy</a>
+                <a href="/terms" class="text-gray-300 hover:text-white px-2">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
 
     <script>
         function updateResolution() {
             const width = window.innerWidth;
             const height = window.innerHeight;
             const resolutionDisplay = document.getElementById('resolutionDisplay');
+            const dynamicResolution = document.getElementById('dynamicResolution');
+            
             resolutionDisplay.innerHTML = `${width} × ${height}`;
+            dynamicResolution.innerHTML = `${width} × ${height}`;
         }
 
         // Initial update
         updateResolution();
-
-        // Update on window resize
         window.addEventListener('resize', updateResolution);
     </script>
 </body>
